@@ -1,16 +1,24 @@
-def length(S,sub):
+import time
+start_time=time.time()
+def length(sub,S):
 	n=len(S)
 	m=len(sub)
+	#print("Pattern found at index \n")
+	matches=[]
 	for i in range(n-m+1):
 		for j in range(m):
 			if S[i+j] != sub[j]:
 				break
 		if j==m-1:
-			print("Pattern found at index "+ str(i))
-
+			matches.append(str(i))
+	return matches
 
 print("Enter main string: ")
 S=input()
 print("Enter sub-string: ")
 sub=input()
-length(S,sub)
+m=length(sub,S)
+count=len(m)
+print(m)
+print("Frequency:",+count)
+print(time.time()-start_time)
