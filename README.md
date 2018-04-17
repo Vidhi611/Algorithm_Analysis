@@ -1,4 +1,4 @@
-# Algorithm_Analysis
+# DNA Pattern Matching
 
 Algorithm analysis (efficiency and reliability) on DNA strings for disease examination: 
 
