@@ -29,17 +29,19 @@ class RollingHash:
         return self.text[self.window_start:self.window_end]
 
 def rabin_karp(word, text):
+    count=0
     if word == "" or text == "":
-        return None
+        return count
     if len(word) > len(text):
-        return None
+        return count
 
     rolling_hash = RollingHash(text, len(word))
     word_hash = RollingHash(word, len(word))
-
+    #word_hash.move_window()
+    
     for i in range(len(text) - len(word) + 1):
         if rolling_hash.hash == word_hash.hash:
             if rolling_hash.window_text() == word:
-                return i
+                 count=count+1
         rolling_hash.move_window()
-    return None
+    return count
