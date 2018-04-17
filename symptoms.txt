@@ -1,0 +1,7 @@
+symptoms = {}
+symptoms['cold'] = ACGTTTC
+symptoms['cough'] = TCAGGCC
+
+diseases = {}
+diseases['fever'] = [2, 4]
+diseases['hepatitis'] = [0, 2]
