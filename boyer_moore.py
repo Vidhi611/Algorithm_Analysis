@@ -4,18 +4,31 @@ start_time=time.time()
 symp_names = []
 symp_names.append("cold")
 symp_names.append("cough")
+symp_names.append("diarrhea")
+symp_names.append("fatigue")
+symp_names.append("fever")
 
 dis_names = []
-dis_names.append("fever")
+dis_names.append("chicken_pox")
+dis_names.append("dengue")
 dis_names.append("hepatitis")
+dis_names.append("jaundice")
+dis_names.append("typhoid")
+
 
 symptoms = {}
-symptoms["cold"] = 'ACGTTTC'
+symptoms["cold"] = 'ACGTTC'
 symptoms["cough"] = 'TCAGGCC'
+symptoms["diarrhea"] = 'GTGCAG'
+symptoms["fatigue"] = 'CTTACGT'
+symptoms["fever"] = 'ATGCTGA'
 
 diseases = {}
-diseases["fever"] = {"cold": 2, "cough": 4}
-diseases["hepatitis"] = {"cold": 0, "cough": 2}
+diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 4, "fatigue": 0, "fever": 6}
+diseases["dengue"] = {"cold": 2, "cough": 4, "diarrhea": 0, "fatigue": 2, "fever": 4}
+diseases["hepatitis"] = {"cold": 0, "cough": 2, "diarrhea": 2, "fatigue": 4, "fever": 2}
+diseases["jaundice"] = {"cold": 0, "cough": 4, "diarrhea": 8, "fatigue": 2, "fever": 6}
+diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 6, "fatigue": 4, "fever": 0}
 
 def alphabet_index(c):
     """
@@ -140,9 +153,8 @@ def search_disease(seq):
             #print("j= " + symp_names[j])
             temp3 = diseases[dis_names[i]][symp_names[j]]
             print(temp3)
-            #print("symp_count[j] " + symp_count[j])
-            
-            if(int(temp3) != symp_count[j])
+            print("symp_count[j] " + str(symp_count[j]))
+            if(ord(str(temp3)) != ord(str(symp_count[j]))):
                 flag = 0
                 break
             if flag == 1:
