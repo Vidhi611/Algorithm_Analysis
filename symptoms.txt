@@ -20,9 +20,6 @@ symptoms["diarrhea"] = 'GTGCAG'
 symptoms["fatigue"] = 'CTTACGT'
 symptoms["fever"] = 'ATGCTGA'
 
-import time
-start_time=time.time()
-
 symp_names = []
 symp_names.append("cold")
 symp_names.append("cough")
