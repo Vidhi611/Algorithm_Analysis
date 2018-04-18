@@ -20,12 +20,45 @@ symptoms["diarrhea"] = 'GTGCAG'
 symptoms["fatigue"] = 'CTTACGT'
 symptoms["fever"] = 'ATGCTGA'
 
+import time
+start_time=time.time()
+
+symp_names = []
+symp_names.append("cold")
+symp_names.append("cough")
+symp_names.append("diarrhea")
+symp_names.append("fatigue")
+symp_names.append("fever")
+
+dis_names = []
+dis_names.append("chicken_pox")
+dis_names.append("dengue")
+dis_names.append("hepatitis")
+dis_names.append("jaundice")
+dis_names.append("typhoid")
+
+
+symptoms = {}
+symptoms["cold"] = 'ACGTTC'
+symptoms["cough"] = 'TCAGGCC'
+symptoms["diarrhea"] = 'GTGCAG'
+symptoms["fatigue"] = 'CTTACGT'
+symptoms["fever"] = 'ATGCTGA'
+
 diseases = {}
-diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 1, "fatigue": 0, "fever": 6}
+diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 4, "fatigue": 0, "fever": 6}
 diseases["dengue"] = {"cold": 2, "cough": 4, "diarrhea": 0, "fatigue": 2, "fever": 4}
 diseases["hepatitis"] = {"cold": 0, "cough": 2, "diarrhea": 2, "fatigue": 4, "fever": 2}
-diseases["jaundice"] = {"cold": 0, "cough": 4, "diarrhea": 8, "fatigue": 2, "fever": 6}
-diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 6, "fatigue": 4, "fever": 0}
+diseases["jaundice"] = {"cold": 0, "cough": 1, "diarrhea": 8, "fatigue": 0, "fever": 5}
+diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 3, "fatigue": 2, "fever": 0}
+
+
+## sample dna sequences
+# jaundice:
+TCAGGCGCATCAGGCTGCTCAGGCACGGTCAGGCCTTGTGCAGTCCGTGCAGACTGTGCAGTACGTGCAGTGGGTGCAGCTCGTGCAGAGCGTGCAGCGTGTGCAGATGCTTACGTCTACTTACGTGTCATGCTGATGCATGCTGAACGATGCTGATGCATGCTGATCGATGCTGATCCATGCTGA
+
+# typhoid:
+ACGTTCTATCAGGCCGGACGTTCTAGTGCAGTCACGTTCGCGTGCAGATCTTACGTTCAGGCCGTACGTTCTGCTTACGTACGTGCAGGCCTTACGTCGGTGCAGACGTGCAGGTCTTACGT
 
 # to access symptom codes
 for i in range(len(symp_names)):
