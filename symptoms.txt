@@ -49,11 +49,20 @@ diseases = {}
 diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 4, "fatigue": 0, "fever": 6}
 diseases["dengue"] = {"cold": 2, "cough": 4, "diarrhea": 0, "fatigue": 2, "fever": 4}
 diseases["hepatitis"] = {"cold": 0, "cough": 2, "diarrhea": 2, "fatigue": 4, "fever": 2}
-diseases["jaundice"] = {"cold": 0, "cough": 1, "diarrhea": 8, "fatigue": 0, "fever": 5}
-diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 3, "fatigue": 2, "fever": 0}
+diseases["jaundice"] = {"cold": 0, "cough": 4, "diarrhea": 8, "fatigue": 2, "fever": 6}
+diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 6, "fatigue": 4, "fever": 0}
 
 
 ## sample dna sequences
+# chiken_pox:
+ACGTTCGACGTTCCTGTGCAGATGTGCAGTAGTGCAGTGGTGCAGACATGCTGACATGCTGAGATGCTGAATGCTGATAACTGGATGCTGATAATGCTGA
+
+# dengue:
+ACGTTCGTCAGGCCTCACGTTCAGTCAGGCCGCATGCTGAGGCTTACGTGCATGCTGACGTCAGGCCTGAATGCTGAGCTCAGGCCGTCTTACGTGATGCTGA
+
+#hepatisis:
+CTTACGTAGTCAGGCCTATGTGCAGTGACTTACGTCGTCAGGCCATGTGCAGTATGCTTACGTGCGATGCTGAGATCTTACGTCAGATGCTGA
+
 # jaundice:
 TCAGGCGCATCAGGCTGCTCAGGCACGGTCAGGCCTTGTGCAGTCCGTGCAGACTGTGCAGTACGTGCAGTGGGTGCAGCTCGTGCAGAGCGTGCAGCGTGTGCAGATGCTTACGTCTACTTACGTGTCATGCTGATGCATGCTGAACGATGCTGATGCATGCTGATCGATGCTGATCCATGCTGA
 
