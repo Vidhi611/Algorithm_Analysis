@@ -1,5 +1,37 @@
 import time
 start_time=time.time()
+
+symp_names = []
+symp_names.append("cold")
+symp_names.append("cough")
+symp_names.append("diarrhea")
+symp_names.append("fatigue")
+symp_names.append("fever")
+
+dis_names = []
+dis_names.append("chicken_pox")
+dis_names.append("dengue")
+dis_names.append("hepatitis")
+dis_names.append("jaundice")
+dis_names.append("typhoid")
+
+
+symptoms = {}
+symptoms["cold"] = 'ACGTTC'
+symptoms["cough"] = 'TCAGGCC'
+symptoms["diarrhea"] = 'GTGCAG'
+symptoms["fatigue"] = 'CTTACGT'
+symptoms["fever"] = 'ATGCTGA'
+
+diseases = {}
+diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 1, "fatigue": 0, "fever": 6}
+diseases["dengue"] = {"cold": 2, "cough": 4, "diarrhea": 0, "fatigue": 1, "fever": 3}
+diseases["hepatitis"] = {"cold": 0, "cough": 0, "diarrhea": 2, "fatigue": 4, "fever": 2}
+diseases["jaundice"] = {"cold": 0, "cough": 1, "diarrhea": 8, "fatigue": 0, "fever": 5}
+diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 3, "fatigue": 2, "fever": 0}
+
+
+
 def alphabet_index(c):
     """
     Returns the index of the given character
@@ -134,17 +166,28 @@ def string_search(P, T):
             k += shift
     return matches
 
+def search_disease(seq):
+    symp_count = []
+    for i in range(len(symp_names)):
+        symp_count.append(len(string_search(symptoms[symp_names[i]], seq)))
+    #print(symp_count)
+    for i in range(len(dis_names)):
+        flag = 1
+        for j in range(len(symp_names)):
+            temp3 = diseases[dis_names[i]][symp_names[j]]
+            if(ord(str(temp3)) != ord(str(symp_count[j]))):
+                flag = 0
+                break
+        if flag == 1:
+            print(dis_names[i])
+
+
 def main():
     """
     Taking input from user and passing the strings to the function.
     Also counting the runtime of the function.
     """
-    p=input("Enter string: ")
-    sub=input("Enter substring: ")
-    m=string_search(sub,p)
-    count=len(m)
-    print(m)
-    print("Frequency:",+count)
+    search_disease("ACGTTCGTCAGGCCTCACGTTCAGTCAGGCCGCATGCTGAGGCTTACGTGCATGCTGACGTCAGGCCTGAATGCTGAGCTCAGGCCGTCTTACGTGATGCTGA")
     print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == '__main__':
