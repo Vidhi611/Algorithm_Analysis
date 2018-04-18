@@ -1,7 +1,43 @@
+symp_names = []
+symp_names.append("cold")
+symp_names.append("cough")
+symp_names.append("diarrhea")
+symp_names.append("fatigue")
+symp_names.append("fever")
+
+dis_names = []
+dis_names.append("chicken_pox")
+dis_names.append("dengue")
+dis_names.append("hepatitis")
+dis_names.append("jaundice")
+dis_names.append("typhoid")
+
+
 symptoms = {}
-symptoms['cold'] = ACGTTTC
-symptoms['cough'] = TCAGGCC
+symptoms["cold"] = 'ACGTTC'
+symptoms["cough"] = 'TCAGGCC'
+symptoms["diarrhea"] = 'GTGCAG'
+symptoms["fatigue"] = 'CTTACGT'
+symptoms["fever"] = 'ATGCTGA'
 
 diseases = {}
-diseases['fever'] = [2, 4]
-diseases['hepatitis'] = [0, 2]
+diseases["chicken_pox"] = {"cold": 2, "cough": 0, "diarrhea": 4, "fatigue": 0, "fever": 6}
+diseases["dengue"] = {"cold": 2, "cough": 4, "diarrhea": 0, "fatigue": 2, "fever": 4}
+diseases["hepatitis"] = {"cold": 0, "cough": 2, "diarrhea": 2, "fatigue": 4, "fever": 2}
+diseases["jaundice"] = {"cold": 0, "cough": 4, "diarrhea": 8, "fatigue": 2, "fever": 6}
+diseases["typhoid"] = {"cold": 4, "cough": 2, "diarrhea": 6, "fatigue": 4, "fever": 0}
+
+# to access symptom codes
+for i in range(len(symp_names)):
+        print(symptoms[symp_names[i]])
+
+# to access the frequency of a symptom required for a particular disease
+for i in range(len(dis_names)):
+    for j in range(len(symp_names)):
+        print(diseases[dis_names[i]][symp_names[j]])
+        
+# to compare the frequency of a symptom required for a particular disease with a given number say (num)
+temp3 = diseases[dis_names[i]][symp_names[j]]
+if(ord(str(temp3)) != ord(str(num))):
+    # do whatever you wish to do
+
